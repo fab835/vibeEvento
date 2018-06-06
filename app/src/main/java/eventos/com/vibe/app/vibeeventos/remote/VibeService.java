@@ -37,27 +37,4 @@ public interface VibeService {
     @GET("Participante/ObterParticipante")
     Call<List<ParticipantDetail>> getParticipantDetails(@Query("idParticipante") int participantId);
 
-//
-//    @FormUrlEncoded
-//    @POST("user")
-//    Call<ResObj> registration(@Field("email") String email,
-//                              @Field("password") String password,
-//                              @Field("password_confirmation") String password_confirmation,
-//                              @Field("first_name") String first_name,
-//                              @Field("last_name") String last_name);
-//
-//    @Headers({"Content-Type: application/json", "Cache-Control: no-cache"})
-//    @POST("collects")
-//    Call<ResObj> createCollect(@Header("Access-Token") String token, @Header("Client") String client, @Header("Uid") String uid, @Body JsonObject body);
-//
-//    @Headers({"Content-Type: application/json", "Cache-Control: no-cache"})
-//    @GET("collects")
-//    Call<ListParticipants<Collect>> getCollects(@Header("Access-Token") String token, @Header("Client") String client, @Header("Uid") String uid);
-//
-//    @Headers({"Content-Type: application/json", "Cache-Control: no-cache"})
-//    @GET("user/validate_token")
-//    Call<ResObj> validateToken(@Header("Access-Token") String token, @Header("Client") String client, @Header("Uid") String uid);
-//
-//    @DELETE("user/sign_out")
-//    Call<ResObj> sign_out(@Header("Access-Token") String token, @Header("Client") String client, @Header("Uid") String uid);
 }
