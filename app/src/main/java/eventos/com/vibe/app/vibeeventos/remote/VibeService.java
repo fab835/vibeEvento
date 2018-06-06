@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import java.util.List;
 
 import eventos.com.vibe.app.vibeeventos.model.Event;
+import eventos.com.vibe.app.vibeeventos.model.ParticipantDetail;
 import eventos.com.vibe.app.vibeeventos.model.ResObj;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -33,7 +34,7 @@ public interface VibeService {
 
     @Headers({"Content-Type: application/json", "Cache-Control: no-cache"})
     @GET("/ Participante/ObterParticipante?idParticipante={idParticipante}")
-    Call<List<Event>> getParticipantDetails(@Path("idParticipante") int participantId);
+    Call<List<ParticipantDetail>> getParticipantDetails(@Path("idParticipante") int participantId);
 
 //
 //    @FormUrlEncoded
