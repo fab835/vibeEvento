@@ -17,24 +17,25 @@ import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 
 public interface VibeService {
 
     @Headers({"Content-Type: application/json", "Cache-Control: no-cache"})
-    @GET("/Evento/EventosAtivosDoCliente?idCliente={idCliente}")
-    Call<List<Event>> getEvents(@Path("idCliente") int userId);
+    @GET("Evento/EventosAtivosDoCliente")
+    Call<List<Event>> getEvents(@Query("idCliente") int userId);
 
 
 
     @FormUrlEncoded
-    @POST("/Evento/ParticipantesDoEvento?idEvento={idEvento}")
-    Call<ResObj> getParticipants(@Path("idEvento") int eventId, @Field("RegistrosPorPagina") int registrosPorPagina, @Field("Pagina") int pagina);
+    @POST("Evento/ParticipantesDoEvento")
+    Call<ResObj> getParticipants(@Query("idEvento") int eventId, @Field("RegistrosPorPagina") int registrosPorPagina, @Field("Pagina") int pagina);
 
 
     @Headers({"Content-Type: application/json", "Cache-Control: no-cache"})
-    @GET("/ Participante/ObterParticipante?idParticipante={idParticipante}")
-    Call<List<ParticipantDetail>> getParticipantDetails(@Path("idParticipante") int participantId);
+    @GET("Participante/ObterParticipante")
+    Call<List<ParticipantDetail>> getParticipantDetails(@Query("idParticipante") int participantId);
 
 //
 //    @FormUrlEncoded
