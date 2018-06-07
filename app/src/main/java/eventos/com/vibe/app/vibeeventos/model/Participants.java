@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Participants {
 
-    private List<ListParticipants> lista;
-    private Paginator paginator;
+    private List<ListParticipants> Lista;
+    private Paginator Paginador;
 
-    public Participants(List<ListParticipants> lista, Paginator paginator) {
-        this.lista = lista;
-        this.paginator = paginator;
+    public Participants(List<ListParticipants> Lista, Paginator Paginador) {
+        this.Lista = Lista;
+        this.Paginador = Paginador;
     }
 
     public Participants(){
@@ -17,18 +17,18 @@ public class Participants {
     }
 
     public List<ListParticipants> getLista() {
-        return lista;
+        return Lista;
     }
 
     public void setLista(List<ListParticipants> lista) {
-        this.lista = lista;
+        this.Lista = lista;
     }
 
     public Paginator getPaginator() {
-        return paginator;
+        return Paginador;
     }
 
-    public void setPaginator(Paginator paginator) {
-        this.paginator = paginator;
+    public void setPaginator(Paginator paginador) {
+        this.Paginador = paginador;
     }
 }

@@ -1,6 +1,7 @@
 package eventos.com.vibe.app.vibeeventos.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import eventos.com.vibe.app.vibeeventos.ParticipantsActivity;
 import eventos.com.vibe.app.vibeeventos.R;
 import eventos.com.vibe.app.vibeeventos.model.Event;
 
@@ -42,7 +44,7 @@ public class EventListsAdapter extends ArrayAdapter<Event> {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         convertView = layoutInflater.inflate(R.layout.events_row_layout, parent, false);
 
-        Event event = events.get(position);
+        final Event event = events.get(position);
         ImageView userFoto = (ImageView) convertView.findViewById(R.id.userFoto);
         try {
             //decode base64 string to image
@@ -82,7 +84,14 @@ public class EventListsAdapter extends ArrayAdapter<Event> {
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+                Intent c = new Intent(context, ParticipantsActivity.class);
+                c.putExtra("EventId", event.getId());
+                c.putExtra("EventNome", event.getNome());
+                c.putExtra("EventInicio", event.getInicio());
+                c.putExtra("EventQuando", event.getQuando());
+                c.putExtra("EventLocal", event.getLocal());
+                c.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(c);
             }
         });
 

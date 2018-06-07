@@ -1,14 +1,14 @@
 package eventos.com.vibe.app.vibeeventos.model;
 
 public class ListParticipants {
-    private int id;
-    private String nome;
-    private String checkIn;
+    private int Id;
+    private String Nome;
+    private String CheckIn;
 
-    public ListParticipants(int id, String nome, String checkIn) {
-        this.id = id;
-        this.nome = nome;
-        this.checkIn = checkIn;
+    public ListParticipants(int Id, String Nome, String CheckIn) {
+        this.Id = Id;
+        this.Nome = Nome;
+        this.CheckIn = CheckIn;
     }
 
     public ListParticipants(){
@@ -16,26 +16,35 @@ public class ListParticipants {
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getNome() {
-        return nome;
+        if(Nome == null){
+            return "Sem Nome";
+        }
+        return Nome;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.Nome = nome;
     }
 
     public String getCheckIn() {
-        return checkIn;
+        if (CheckIn == null){
+            return null;
+        }
+
+        String date[]  = CheckIn.split("T")[0].split("-");
+        String hora[] = CheckIn.split("T")[1].split(":");
+        return date[2]+"/"+date[1]+"/"+date[0] + " às " + hora[0]+":"+hora[1];
     }
 
     public void setCheckIn(String checkIn) {
-        this.checkIn = checkIn;
+        this.CheckIn = checkIn;
     }
 }

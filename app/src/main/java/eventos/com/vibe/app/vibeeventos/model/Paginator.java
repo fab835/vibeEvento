@@ -3,15 +3,15 @@ package eventos.com.vibe.app.vibeeventos.model;
 public class Paginator {
 
     private int pagina;
-    private int totalPaginas;
-    private int registroPorPagina;
-    private int totalRegistros;
+    private int TotalPaginas;
+    private int RegistroPorPagina;
+    private int TotalRegistros;
 
-    public Paginator(int pagina, int totalPaginas, int registroPorPagina, int totalRegistros) {
-        this.pagina = pagina;
-        this.totalPaginas = totalPaginas;
-        this.registroPorPagina = registroPorPagina;
-        this.totalRegistros = totalRegistros;
+    public Paginator(int Pagina, int TotalPaginas, int RegistroPorPagina, int TotalRegistros) {
+        this.pagina = Pagina;
+        this.TotalPaginas = TotalPaginas;
+        this.RegistroPorPagina = RegistroPorPagina;
+        this.TotalRegistros = TotalRegistros;
     }
 
     public Paginator(){
@@ -27,26 +27,26 @@ public class Paginator {
     }
 
     public int getTotalPaginas() {
-        return totalPaginas;
+        return TotalPaginas;
     }
 
     public void setTotalPaginas(int totalPaginas) {
-        this.totalPaginas = totalPaginas;
+        this.TotalPaginas = totalPaginas;
     }
 
     public int getRegistroPorPagina() {
-        return registroPorPagina;
+        return RegistroPorPagina;
     }
 
     public void setRegistroPorPagina(int registroPorPagina) {
-        this.registroPorPagina = registroPorPagina;
+        this.RegistroPorPagina = registroPorPagina;
     }
 
     public int getTotalRegistros() {
-        return totalRegistros;
+        return TotalRegistros;
     }
 
     public void setTotalRegistros(int totalRegistros) {
-        this.totalRegistros = totalRegistros;
+        this.TotalRegistros = totalRegistros;
     }
 }

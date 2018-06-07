@@ -1,19 +1,11 @@
 package eventos.com.vibe.app.vibeeventos;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.List;
 
 import eventos.com.vibe.app.vibeeventos.Adapters.EventListsAdapter;
@@ -35,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listViewCollects = (ListView) findViewById(R.id.listCollects);
+        listViewCollects = (ListView) findViewById(R.id.listParticipants);
 
 
         vibeService = ApiUtils.getUserService();
@@ -43,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         progress  = new ProgressDialog(this);
         progress.setTitle("Carregando");
         progress.setMessage("Aguarde...");
-        progress.setCancelable(true); // disable dismiss by tapping outside of the dialog
+        progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
 
         listEvents();
     }
@@ -51,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     public void listEvents(){
 
         progress.show();
-//        final Intent c = new Intent(this, CollectDescriptionActivity.class);
 
         Call<List<Event>> call = vibeService.getEvents(-1);
         call.enqueue(new Callback<List<Event>>() {
